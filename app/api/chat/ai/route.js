@@ -6,12 +6,11 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-    // baseURL: 'https://api.deepseek.com',
     baseURL: 'https://openrouter.ai/api/v1' ,
     apiKey: process.env.DEEPSEEK_API_KEY,
     defaultHeaders: {
     "HTTP-Referer": "http://localhost:3000",
-"X-Title": "My Dev Chat App"
+    "X-Title": "My Dev Chat App"
 
   }
 
@@ -42,8 +41,7 @@ export async function POST(req) {
         //call the deepseek api
         const completion = await openai.chat.completions.create({
             messages:[{role: "user", content:prompt}],
-            // model: "deepseek-chat",
-            model:  "deepseek/deepseek-r1:free"
+            model:  "deepseek/deepseek-r1-0528:free"
 ,
             store:true,
         });
