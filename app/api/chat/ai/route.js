@@ -9,12 +9,12 @@ const openai = new OpenAI({
     baseURL: 'https://openrouter.ai/api/v1' ,
     apiKey: process.env.DEEPSEEK_API_KEY,
     defaultHeaders: {
-    // "HTTP-Referer": "http://localhost:3000",
-    "HTTP-Referer": "https://deepseek-nine-chi.vercel.app/",
-    "X-Title": "My Dev Chat App"
-
-  }
-
+        "HTTP-Referer": "http://localhost:3000",
+        // "HTTP-Referer": "https://deepseek-nine-chi.vercel.app/",
+        "X-Title": "My Dev Chat App"
+        
+    }
+    
 });
 
 export async function POST(req) {
